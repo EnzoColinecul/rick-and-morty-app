@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+
+@font-face {
+  font-family: "Get Schwifty";
+  src: local("Get Schwifty") url(../assets/fonts/get_schwifty.ttf) format("ttf");
+}
+
+@layer base {
+  body {
+    @apply bg-black bg-portal bg-100 bg-no-repeat;
+  }
+
+  html {
+    @apply h-full;
+  }
+}
+
+@tailwind utilities;
