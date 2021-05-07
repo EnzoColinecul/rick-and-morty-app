@@ -1,0 +1,90 @@
+.btn {
+  @apply transition duration-300 
+ flex 
+ w-full 
+ place-content-center 
+ px-3
+ py-2
+ mr-2
+ text-sm
+ font-medium
+ bg-blue-logo 
+ text-white 
+ rounded-full
+ focus:outline-none 
+ hover:bg-opacity-70
+ disabled:opacity-50 
+ md:w-1/2;
+}
+
+.btn-cards {
+  @apply flex 
+  w-full
+  place-content-center 
+  px-3
+  py-2 
+  mr-2
+  text-sm 
+  font-medium 
+  rounded-full
+text-white 
+bg-blue-logo 
+  disabled:opacity-50 
+  hover:bg-opacity-70
+  focus:outline-none;
+}
+
+.auth-btn {
+  @apply transition duration-300 
+  flex 
+  mb-6
+  text-2xl
+  font-medium  
+  text-blue-logo  
+  rounded-full
+  hover:text-opacity-70 
+  focus:outline-none;
+}
+
+.google-btn {
+  @apply transition duration-300
+  w-full 
+  h-9 
+  mt-1 
+  mb-4 
+  bg-blue-400 
+  shadow-lg  
+  rounded-lg 
+  cursor-pointer 
+  hover:bg-blue-500
+  sm:h-10;
+}
+
+.google-icon-wrapper {
+  @apply absolute 
+  w-9 
+  h-9
+  rounded-lg
+  bg-white
+  sm:h-10
+  sm:w-10;
+}
+
+.google.icon {
+  @apply absolute 
+  w-2 
+  h-2 
+  mt-3 
+  ml-3 
+  sm:w-4 
+  sm:h-4;
+}
+
+.btn-text {
+  @apply 
+  mt-2
+  text-sm 
+  text-center
+  sm:mt-2 
+  sm:text-base 
+}

@@ -1,8 +1,14 @@
-import Routers from './routers/Routers';
+import React from 'react';
+import AppRouter from './routers/AppRouter';
+import { Provider } from 'react-redux';
+import { store } from './store/store';
 
-function App() {
+const App = () => {
+  
   return (
-    <Routers/>
+    <Provider store={store}>
+       <AppRouter />
+    </Provider>
   );
 }
 

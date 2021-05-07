@@ -1,19 +1,29 @@
 @tailwind base;
 @tailwind components;
+@tailwind utilities;
 
 @font-face {
   font-family: "Get Schwifty";
   src: local("Get Schwifty") url(../assets/fonts/get_schwifty.ttf) format("ttf");
 }
 
-@layer base {
-  body {
-    @apply bg-black bg-portal bg-100 bg-no-repeat;
+@layer utilities {
+
+  .scrollbar::-webkit-scrollbar{
+    ::-webkit-appearance: none;
+      background-color: #ccc;
   }
 
-  html {
-    @apply h-full;
+  .scrollbar::-webkit-scrollbar:vertical {
+    width: 8px;
+  }
+
+  .scrollbar::-webkit-scrollbar:horizontal{
+    height: 10px;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb {
+    background-color: #797979;
+      border-radius: 20px;
   }
 }
-
-@tailwind utilities;
