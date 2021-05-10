@@ -5,7 +5,6 @@ import { types } from '../types/types'
 
 export const loadCharacters = (data, error) => {
   return (dispatch) => {
-    console.log(data);
     if (data) {
       dispatch(setCharacters(data.results))
     }
@@ -15,6 +14,11 @@ export const loadCharacters = (data, error) => {
   }
 }
 
+export const setCharacters = (characters) => ({
+  type: types.charactersLoad,
+  payload: characters
+})
+
 export const startSaveFavoriteCharacter = (character) => {
   toast.loading('Save...')
   return async (dispatch, getState) => {
@@ -22,15 +26,20 @@ export const startSaveFavoriteCharacter = (character) => {
     /* const characterToFirestore = {...character}
     delete characterToFirestore.id */
     await db.collection(`${uid}/rick-and-morty/favorites-characters`).add(character)
+    dispatch(refreshFavoritesCharacters(character))
     toast.dismiss()
     toast.success('Favorite saved')
   }
 }
 
+export const refreshFavoritesCharacters = (character) => ({
+  type: types.charactersFavoritesRefresh,
+  payload: character
+})
+
 export const startLoadFavoritesCharacters = (uid) => {
   return async (dispatch) => {
     const favoritesCharacters = await loadFavorites(uid)
-    console.log(favoritesCharacters);
     dispatch(setFavoritesCharacters(favoritesCharacters))
   }
 }
@@ -42,25 +51,6 @@ export const setFavoritesCharacters = (favoritesCharacters) => ({
 
 export const activeCharacter = (id, character) => ({
   type: types.charactersActive,
-  payload: {
-    id,
-    character
-  }
-})
-
-export const setCharacters = (characters) => ({
-  type: types.charactersLoad,
-  payload: characters
-})
-
-export const loadFavoritesCharacters = (active) => {
-  return (dispatch) => {
-    dispatch(refreshFavoritesCharacters(active))
-  }
-}
-
-export const refreshFavoritesCharacters = (id, character) => ({
-  type: types.charactersFavoritesRefresh,
   payload: {
     id,
     character

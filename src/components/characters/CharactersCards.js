@@ -2,7 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import CharacterCard from './CharacterCard'
 
-const CharactersCards = ({ homeCharacters, favoritesCharacters }) => {
+const CharactersCards = ({ homeCharacters, favoritesCharacters, loadingCards }) => {
 
   const { characters, favorites } = useSelector(state => state.characters)
 
@@ -45,6 +45,7 @@ const CharactersCards = ({ homeCharacters, favoritesCharacters }) => {
               origin={character.origin.name}
               location={character.location.name}
               episode={character.episode.length}
+              loadingCards={loadingCards}
             />
           ))
         }

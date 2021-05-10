@@ -5,16 +5,16 @@ import {
   Route,
   Switch
 } from 'react-router-dom'
-import LoadingScreen from '../components/loading/LoadingScreen'
-import AuthRouter from './AuthRouter'
-import { PublicRoute } from './PublicRoute'
-import { login } from '../actions/auth'
 import { useDispatch, useSelector } from 'react-redux'
-import { firebase } from '../firebase/firebase-config'
 import { Toaster } from 'react-hot-toast'
-import MainRouter from './MainRouter'
+import { firebase } from '../firebase/firebase-config'
 import { finishLoading, startLoading } from '../actions/ui'
 import { startLoadFavoritesCharacters } from '../actions/characters'
+import { login } from '../actions/auth'
+import { PublicRoute } from './PublicRoute'
+import MainRouter from './MainRouter'
+import AuthRouter from './AuthRouter'
+import LoadingScreen from '../components/loading/LoadingScreen'
 
 const Routers = () => {
 

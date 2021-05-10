@@ -5,23 +5,23 @@ const useFetch = (url, params) => {
   const isMounted = useRef(true)
   const [state, setState] = useState({ data: null, loading: true, error: null })
 
-  useEffect(() => {
-    return () => {
-      isMounted.current = false
-    }
-  }, [])
+useEffect(() => {
+  return () => {
+    setState({ data: null, loading: true})
+  }
+}, [])
 
   useEffect(() => {
     fetch(`${url}?${params.toString()}`)
       .then(res => res.json())
       .then(data => {
-        if (isMounted.current) {
+     
           setState({
             data: data,
             loading: false,
             error: null
           })
-        }
+        
       })
       .catch((err) => {
         setState({
@@ -30,6 +30,8 @@ const useFetch = (url, params) => {
           error: 'No se pudo cargar la informacion'
         })
       })
+
+    
   }, [url, params])
 
   return state

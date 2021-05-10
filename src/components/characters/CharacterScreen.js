@@ -4,28 +4,35 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Transition } from '@headlessui/react'
 import {
   HeartIcon,
-  ArrowLeftIcon
+  ArrowLeftIcon,
+  BanIcon
 } from '@heroicons/react/solid'
 import { startSaveFavoriteCharacter } from '../../actions/characters'
+import { checkDuplicate } from '../../helpers/checkDuplicate'
 
 const CharacterScreen = ({ history }) => {
 
   const dispatch = useDispatch()
 
   const { logged } = useSelector(state => state.auth)
-  const { active } =  useSelector(state => state.characters)
+  const { active, favorites } = useSelector(state => state.characters)
   const { loading } = useSelector(state => state.ui)
 
+  const checkingFavorite = checkDuplicate(favorites, active)
+
   if (!active) {
-    return <Redirect to="/home"/>
+    return <Redirect to="/home" />
   }
 
-  const { character } = active    
-  
+  const { character } = active
+
   const handleFavorite = () => {
     dispatch(startSaveFavoriteCharacter(active))
   }
-  
+
+  const handleUndoFavorite = () => {
+    console.log("hi");
+  }
 
   return (
     <div className=" h-screen transition delay-150 duration-700 ease-in  justify-items-center grid sm:grid-cols-1  ">
@@ -68,14 +75,25 @@ const CharacterScreen = ({ history }) => {
                 <ArrowLeftIcon className="flex self-center h-4 w-6 " />
                 Back
               </button>
-              <button
-                className="w-full flex place-content-center focus:outline-none bg-blue-logo transitionHover hover:bg-opacity-70 disabled:opacity-50 text-white rounded-full px-3 py-2 text-sm font-medium mr-2 "
-                disabled={!logged}
-                onClick={handleFavorite}
-              >
-                <HeartIcon className="flex h-5 w-6" />
+              {!checkingFavorite
+                ? (<button
+                  className="w-full flex place-content-center focus:outline-none bg-blue-logo transitionHover hover:bg-opacity-70 disabled:opacity-50 text-white rounded-full px-3 py-2 text-sm font-medium mr-2 "
+                  disabled={!logged}
+                  onClick={handleFavorite}
+                >
+                  <HeartIcon className="flex h-5 w-6" />
                 Favorite
-              </button>
+                </button>)
+                : (<button
+                  className="w-full flex place-content-center focus:outline-none bg-blue-logo transitionHover hover:bg-opacity-70 disabled:opacity-50 text-white rounded-full px-3 py-2 text-sm font-medium mr-2 "
+                  disabled={!logged}
+                  onClick={handleUndoFavorite}
+                >
+                  <BanIcon className="flex h-5 w-6" />
+                Undo Favorite
+                </button>)
+              }
+
             </div>
           </div>
         </Transition>

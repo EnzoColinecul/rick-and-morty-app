@@ -23,18 +23,14 @@ export const charactersReducer = (state = initialState, action) => {
     case types.charactersFavoritesRefresh:
       return {
         ...state,
-        favorites: state.characters.map(
-          character => character.id !== action.payload.id
-          ? action.payload.character
-          : character
-        )
+        favorites: state.favorites.concat(action.payload)
       }
     case types.charactersLoad:
       return {
         ...state,
         characters: [...action.payload]
       }
-    
+
     default:
       return state
   }
