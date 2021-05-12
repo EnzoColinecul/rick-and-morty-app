@@ -1,9 +1,12 @@
 
 
 export const checkDuplicate = (favorites, active) => {
-  const checker = favorites.find(favorite => (
-    favorite.id === active.id
-  ))
-
-  return checker
+  if (favorites.ids?.lenght !==0) {
+    let checker = favorites.ids?.find(favorite => (
+      favorite === active.id
+    ))
+    return checker
+  } else {
+    return null
+  }
 }

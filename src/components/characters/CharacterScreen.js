@@ -7,7 +7,7 @@ import {
   ArrowLeftIcon,
   BanIcon
 } from '@heroicons/react/solid'
-import { startSaveFavoriteCharacter } from '../../actions/characters'
+import { startDeleteFavoriteCharacter, startSaveFavoriteCharacter } from '../../actions/characters'
 import { checkDuplicate } from '../../helpers/checkDuplicate'
 
 const CharacterScreen = ({ history }) => {
@@ -27,11 +27,11 @@ const CharacterScreen = ({ history }) => {
   const { character } = active
 
   const handleFavorite = () => {
-    dispatch(startSaveFavoriteCharacter(active))
+    dispatch(startSaveFavoriteCharacter(active.id))
   }
 
   const handleUndoFavorite = () => {
-    console.log("hi");
+    dispatch(startDeleteFavoriteCharacter(active.id))
   }
 
   return (

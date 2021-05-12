@@ -12,7 +12,7 @@ export const types = {
   charactersLoad: '[Characters] Load Characters',
   charactersActive: '[Characters] Set Active Character',
   charactersLoadFavorites: '[Characters] Load Favorites Characters',
-  charactersUndoFavorites: '[Characters] Undo Character as Favorite',
+  charactersUndoFavorite: '[Characters] Undo Character as Favorite',
   charactersFavoritesRefresh: '[Characters] Refresh Favorites Characters',
 
   pagesActive: "[Pages] Set Active Page"

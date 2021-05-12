@@ -2,7 +2,7 @@ import { types } from "../types/types";
 
 const initialState = {
   characters: [],
-  favorites: [],
+  favorites: {},
   active: null
 }
 
@@ -18,19 +18,26 @@ export const charactersReducer = (state = initialState, action) => {
     case types.charactersLoadFavorites:
       return {
         ...state,
-        favorites: [...action.payload]
+        favorites: { ...action.payload }
       }
     case types.charactersFavoritesRefresh:
       return {
         ...state,
-        favorites: state.favorites.concat(action.payload)
+        favorites: { ids: [...state.favorites.ids.concat(action.payload)] }
       }
     case types.charactersLoad:
       return {
         ...state,
         characters: [...action.payload]
       }
-
+    case types.charactersUndoFavorite:
+      console.log(action.payload);
+      return {
+        ...state,
+        favorites: {
+          ids: state.favorites.ids.filter(id => id !== action.payload)
+        }
+      }
     default:
       return state
   }
