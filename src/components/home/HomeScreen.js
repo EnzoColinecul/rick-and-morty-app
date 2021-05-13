@@ -9,7 +9,6 @@ const HomeScreen = () => {
 
   const [loadingCards, setLoadingCards] = useState(false)
 
-  console.log(loadingCards);
   return (
     <>
       <div className="main-container  py-16 h-screen">
