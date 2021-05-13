@@ -14,6 +14,7 @@ export const types = {
   charactersLoadFavorites: '[Characters] Load Favorites Characters',
   charactersUndoFavorite: '[Characters] Undo Character as Favorite',
   charactersFavoritesRefresh: '[Characters] Refresh Favorites Characters',
+  charactersSetSearch: '[Characters] Set Search',
 
   pagesActive: "[Pages] Set Active Page"
 }

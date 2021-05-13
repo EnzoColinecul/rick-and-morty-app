@@ -14,7 +14,7 @@ const Pagination = ({ setLoadingCards }) => {
   const url = `${API_URL}/character/`
 
   const [params, setParams] = useState(new URLSearchParams({ page: activePage }))
-  const { data, error, loading } = useFetch(url, params)
+  const { data, error } = useFetch(url, params)
 
   useEffect(() => {
     if (data) {
@@ -24,7 +24,7 @@ const Pagination = ({ setLoadingCards }) => {
   }, [data, error, dispatch, setLoadingCards])
 
   const handlePageChange = (newPage) => {
-    setLoadingCards(loading)
+    setLoadingCards(true)
     let selected = newPage.selected + 1
     setParams(new URLSearchParams({ page: selected }))
     dispatch(setActivePage(selected))

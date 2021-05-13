@@ -32,7 +32,7 @@ const CharacterCard = ({
 
   return (
     <>
-      <LoadingPreviewCards loadingCards={loadingCards} />
+      {loadingCards && <LoadingPreviewCards show={true} />}
       <Transition
         as="div"
         onClick={handleActiveCharacter}

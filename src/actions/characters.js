@@ -41,9 +41,13 @@ export const refreshFavoritesCharacters = (character) => ({
 
 export const startLoadFavoritesCharacters = (uid) => {
   return async (dispatch) => {
-    let favoritesCharacters = await loadFavorites(uid);
-    if (favoritesCharacters.length === 0) await db.doc(`${uid}/rick-and-morty/characters/favorites-characters-id/`).set({ ids: [] }, { merge: true });
-    dispatch(setFavoritesCharacters(favoritesCharacters));
+    let favoritesCharacters = await loadFavorites(uid)
+    if (Object.keys(favoritesCharacters).length === 0) {
+      await db.doc(`${uid}/rick-and-morty/characters/favorites-characters-id/`).set({ ids: [] }, { merge: true })
+      favoritesCharacters = await loadFavorites(uid)
+      dispatch(setFavoritesCharacters(favoritesCharacters))
+    }
+    dispatch(setFavoritesCharacters(favoritesCharacters))
   }
 }
 
@@ -54,7 +58,7 @@ export const setFavoritesCharacters = (favoritesCharacters) => ({
 
 export const startDeleteFavoriteCharacter = (characterId) => {
   toast.loading('Deleting Favorite...')
-  return async(dispatch, getState) => {
+  return async (dispatch, getState) => {
     const { uid } = getState().auth
 
     await db.doc(`${uid}/rick-and-morty/characters/favorites-characters-id/`).update({
@@ -77,4 +81,9 @@ export const activeCharacter = (id, character) => ({
     id,
     character
   }
+})
+
+export const setSearches = (searches) => ({
+  type: types.charactersSetSearch,
+  payload: searches
 })
