@@ -19,7 +19,7 @@ const useFetch = (url, params) => {
           setState({
             data: data,
             loading: false,
-            error: null
+            error: data?.error
           })
         })
         .catch((err) => {
