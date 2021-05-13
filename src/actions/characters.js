@@ -41,7 +41,7 @@ export const refreshFavoritesCharacters = (character) => ({
 
 export const startLoadFavoritesCharacters = (uid) => {
   return async (dispatch) => {
-    const favoritesCharacters = await loadFavorites(uid)
+    let favoritesCharacters = await loadFavorites(uid);
 
     if (favoritesCharacters.length === 0) {
       await db.doc(`${uid}/rick-and-morty/characters/favorites-characters-id/`).set({ ids: [] }, { merge: true })
