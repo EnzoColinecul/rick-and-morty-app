@@ -3,6 +3,7 @@ import { types } from "../types/types";
 const initialState = {
   characters: [],
   favorites: {},
+  searches: "",
   active: null
 }
 
@@ -31,12 +32,16 @@ export const charactersReducer = (state = initialState, action) => {
         characters: [...action.payload]
       }
     case types.charactersUndoFavorite:
-      console.log(action.payload);
       return {
         ...state,
         favorites: {
           ids: state.favorites.ids.filter(id => id !== action.payload)
         }
+      }
+    case types.charactersSetSearch:
+      return {
+        ...state,
+        searches: action.payload
       }
     default:
       return state

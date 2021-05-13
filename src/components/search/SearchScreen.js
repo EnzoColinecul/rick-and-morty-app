@@ -1,0 +1,33 @@
+import React, { useState } from 'react'
+import { useSelector } from 'react-redux'
+import { API_URL } from '../../constants'
+import useFetch from '../../hooks/useFetch'
+import CharactersCards from '../characters/CharactersCards'
+import LoadingPreviewCards from '../loading/LoadingPreviewCards'
+
+const SearchScreen = () => {
+
+  const url = `${API_URL}/character/`
+
+  const { searches } = useSelector(state => state.characters)
+  const [params] = useState(new URLSearchParams({ name: searches }))
+  const { data, error, loading } = useFetch(url, params)
+
+  return (
+    <div className="py-16 h-screen">
+      <div className=" flex flex-col justify-center overflow-auto scrollbar  sm:ml-0">
+        {!loading ?
+          <CharactersCards
+            searchCharacter={true}
+            data={data.results}
+            error={error}
+          />
+          :
+          <LoadingPreviewCards show={true}/>
+        }
+      </div>
+    </div>
+  )
+}
+
+export default SearchScreen
