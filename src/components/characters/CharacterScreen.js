@@ -85,7 +85,7 @@ const CharacterScreen = ({ history }) => {
                 Favorite
                 </button>)
                 : (<button
-                  className="w-1/2 sm:w-full flex place-content-center focus:outline-none bg-blue-logo transitionHover hover:bg-opacity-70 disabled:opacity-50 text-white rounded-full px-3 py-2 text-sm font-medium mr-2 "
+                  className="w-1/2 sm:w-full items-center flex place-content-center focus:outline-none bg-blue-logo transitionHover hover:bg-opacity-70 disabled:opacity-50 text-white rounded-full px-3 sm:py-2 text-sm font-medium mr-2 "
                   disabled={!logged}
                   onClick={handleUndoFavorite}
                 >

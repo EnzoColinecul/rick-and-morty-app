@@ -10,15 +10,15 @@ const MenuPanel = ({
   handleLogout
 }) => {
   return (
-    <Transition
-      show={isShowing}
-      className="block"
-      as="div"
-      enter="transition ease-in duration-200 "
-      enterFrom="transform opacity-0 scale-105"
-      enterTo="transform opacity-100 scale-100"
-    >
-      <Disclosure.Panel as="div" className="md:hidden bg-gray-800 " >
+    <Disclosure.Panel as="div" className="md:hidden bg-gray-800 " >
+      <Transition
+        show={isShowing}
+        className="block"
+        as="div"
+        enter="transition ease-in duration-200 "
+        enterFrom="transform opacity-0 scale-105"
+        enterTo="transform opacity-100 scale-100"
+      >
         <div className="px-2 pt-2 pb-3 space-y-1">
           {navigation.map((item, index) => (
             <div key={index} >
@@ -70,8 +70,8 @@ const MenuPanel = ({
             }
           </div>
         </div>
-      </Disclosure.Panel>
-    </Transition>
+      </Transition>
+    </Disclosure.Panel>
   )
 }
 

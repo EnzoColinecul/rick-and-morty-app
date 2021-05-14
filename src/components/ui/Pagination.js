@@ -31,7 +31,7 @@ const Pagination = ({ setLoadingCards }) => {
   }
 
   return (
-    <div className="pagination-container shadow-xl">
+    <div className="pagination-container mt-20 mb-2 shadow-xl">
       <ReactPaginate
         initialPage={activePage - 1}
         previousLabel={'Previous'}
@@ -41,7 +41,7 @@ const Pagination = ({ setLoadingCards }) => {
         breakLabel={'...'}
         pageClassName="pagination-page"
         activeClassName="pagination-active-btn"
-        containerClassName="flex flex-row self-center my-2"
+        containerClassName="flex flex-row self-center my-2 " 
         pageCount={data?.info.pages}
         marginPagesDisplayed={1}
         pageRangeDisplayed={3}

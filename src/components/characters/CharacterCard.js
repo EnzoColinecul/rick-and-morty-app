@@ -44,7 +44,7 @@ const CharacterCard = ({
         <div className="character-card-container">
           <NavLink to={`/character/${id}`}>
             <img
-              className="character-card-image transitionHover group-hover:transform group-hover:scale-105 h-72"
+              className="character-card-image transitionHover transform-none sm:group-hover:transform sm:group-hover:scale-105 h-72"
               src={urlImage}
               alt={name}
             />

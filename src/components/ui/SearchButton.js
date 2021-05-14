@@ -5,7 +5,7 @@ import { setSearches } from '../../actions/characters'
 import { Redirect } from 'react-router'
 
 
-const SearchButton = ({setIsShowing}) => {
+const SearchButton = ({ setIsShowing }) => {
 
   const dispatch = useDispatch()
   const [value, setValue] = useState("")
@@ -50,7 +50,6 @@ const SearchButton = ({setIsShowing}) => {
           <>
             <Disclosure.Button
               type="button"
-              onClick={setIsShowing(false)}
               className="absolute p-2 inset-y-3 right-2 inline-flex  items-center focus:outline-none text-gray-400 rounded-3xl cursor-pointer transitionHover hover:text-white  hover:bg-gray-700  focus:ring-0 focus:ring-inset focus:ring-white"
             >
               <svg xmlns="http://www.w3.org/2000/svg" className="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">

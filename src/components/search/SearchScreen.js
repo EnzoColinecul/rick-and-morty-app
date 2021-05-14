@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
+import { Redirect } from 'react-router'
 import { API_URL } from '../../constants'
 import useFetch from '../../hooks/useFetch'
 import CharactersCards from '../characters/CharactersCards'
@@ -12,6 +13,10 @@ const SearchScreen = () => {
   const { searches } = useSelector(state => state.characters)
   const [params] = useState(new URLSearchParams({ name: searches }))
   const { data, error, loading } = useFetch(url, params)
+
+  if (searches === "") {
+    return <Redirect to="/home"/>
+  }
 
   return (
     <div className="py-16 h-screen">
