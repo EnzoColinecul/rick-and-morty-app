@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
+import { Redirect } from 'react-router'
 import { API_URL } from '../../constants'
 import useFetch from '../../hooks/useFetch'
 import CharactersCards from '../characters/CharactersCards'
@@ -13,9 +14,13 @@ const SearchScreen = () => {
   const [params] = useState(new URLSearchParams({ name: searches }))
   const { data, error, loading } = useFetch(url, params)
 
+  if (searches === "") {
+    return <Redirect to="/home" />
+  }
+
   return (
     <div className="py-16 h-screen">
-      <div className=" flex flex-col justify-center overflow-auto scrollbar  sm:ml-0">
+      <div className="flex flex-col justify-center overflow-auto scrollbar ml-4  sm:ml-0">
         {!loading ?
           <CharactersCards
             searchCharacter={true}
@@ -23,7 +28,7 @@ const SearchScreen = () => {
             error={error}
           />
           :
-          <LoadingPreviewCards show={true}/>
+          <LoadingPreviewCards show={true} />
         }
       </div>
     </div>

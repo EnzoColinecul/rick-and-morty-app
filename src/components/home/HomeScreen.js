@@ -11,8 +11,8 @@ const HomeScreen = () => {
 
   return (
     <>
-      <div className="main-container  py-16 h-screen">
-        <div className="home-container flex flex-col justify-center overflow-auto scrollbar ml-4 sm:ml-0">
+      <div className="main-container  scrollbar ">
+        <div className="home-container flex flex-col justify-center -mb-14 h-screen ml-4 sm:ml-0">
           <Pagination setLoadingCards={setLoadingCards} />
           {!loadingCards ?
             <CharactersCards homeCharacters={true} />
