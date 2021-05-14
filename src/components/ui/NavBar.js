@@ -126,7 +126,7 @@ const NavBar = () => {
               </div>
             </div>
           </div>
-          <SearchButton />
+          <SearchButton setIsShowing={setIsShowing} />
           <MenuPanel
             classNames={classNames}
             navigation={navigation}

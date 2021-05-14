@@ -22,7 +22,7 @@ const FavoritesScreen = ({ history }) => {
 
   return (
     <div className="py-16 h-screen">
-      <div className=" flex flex-col justify-center overflow-auto scrollbar  sm:ml-0">
+      <div className="flex flex-col justify-center overflow-auto scrollbar ml-4 sm:ml-0">
         {!loading &&
           <CharactersCards
             favoritesCharacters={true}

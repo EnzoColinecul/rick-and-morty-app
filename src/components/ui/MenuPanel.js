@@ -1,6 +1,6 @@
 import React from 'react'
 import { Disclosure, Transition } from '@headlessui/react'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 
 const MenuPanel = ({
   classNames,
@@ -24,8 +24,9 @@ const MenuPanel = ({
             <div key={index} >
               {item.isLogged === false ? (
                 <div>
-                  <a
-                    href={item.href}
+                  <NavLink
+                    key={item.name}
+                    to={item.link}
                     className={classNames(
                       item.current ? 'bg-gray-900 text-white' : 'text-gray-600 flex flex-col  disabled:opacity-50',
                       'px-2 py-2 rounded-md text-sm font-medium'
@@ -37,11 +38,12 @@ const MenuPanel = ({
                       {item.name}
                       <p className="text-xs flex items-center font-light text-gray-600 pl-1 "> Need authentication</p>
                     </div>
-                  </a>
+                  </NavLink>
                 </div>) : (
                 <div >
-                  <a
-                    href={item.href}
+                  <NavLink
+                    key={item.name}
+                    to={item.link}
                     className={classNames(
                       item.current ? 'bg-gray-900 text-white' : 'flex text-gray-300 hover:bg-gray-700 hover:text-white',
                       'block px-2 py-2 rounded-md text-base font-medium'
@@ -50,7 +52,7 @@ const MenuPanel = ({
                   >
                     {item.icon}
                     {item.name}
-                  </a>
+                  </NavLink>
                 </div>)
               }
             </div>
