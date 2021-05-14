@@ -1,8 +1,8 @@
 import { Transition } from '@headlessui/react'
 import React from 'react'
 
-import rick from '../../assets/images/RickAndMortyLoadingImage1.png'
-import morty from '../../assets/images/RickAndMortyLoadingImage2.png'
+import rick from './../assets/images/RickAndMortyLoadingImage1.png'
+import morty from './../assets/images/RickAndMortyLoadingImage2.png'
 
 const LoadingScreen = ({ loading }) => {
 

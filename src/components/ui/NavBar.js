@@ -12,7 +12,7 @@ import {
 } from '@heroicons/react/solid'
 import SearchButton from './SearchButton'
 import MenuPanel from './MenuPanel'
-import logo from '../../assets/images/rick-and-morty-app.png'
+import logo from './../assets/images/rick-and-morty-app.png'
 
 import '../../styles/components/home.css'
 

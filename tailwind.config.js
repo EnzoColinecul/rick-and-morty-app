@@ -45,7 +45,7 @@ module.exports = {
         }
       },
       backgroundImage: theme => ({
-        'portal': "url('/src/assets/images/rick-and-morty.png')"
+        'portal': "url('./src/assets/images/rick-and-morty.png')"
       }),
     },
     visibility: ['hover', 'focus'],
