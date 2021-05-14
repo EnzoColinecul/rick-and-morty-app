@@ -1,6 +1,6 @@
 import React from 'react'
-import defaultImageCard from '../../assets/images/defaultImageCard.jpeg'
 import { Transition } from '@headlessui/react'
+import defaultImageCard from '../../assets/images/defaultImageCard.jpeg'
 
 import '../../styles/components/home.css'
 

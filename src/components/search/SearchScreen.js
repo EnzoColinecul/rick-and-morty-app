@@ -15,7 +15,7 @@ const SearchScreen = () => {
   const { data, error, loading } = useFetch(url, params)
 
   if (searches === "") {
-    return <Redirect to="/home"/>
+    return <Redirect to="/home" />
   }
 
   return (
@@ -28,7 +28,7 @@ const SearchScreen = () => {
             error={error}
           />
           :
-          <LoadingPreviewCards show={true}/>
+          <LoadingPreviewCards show={true} />
         }
       </div>
     </div>
