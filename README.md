@@ -7,6 +7,10 @@ Es un proyecto que nacio con la idea de poner a prueba mis conocimientos en Java
 
 _Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas._
 
+### Pre-requisitos 📋
+
+Por motivos de seguridad la API KEY no esta subida al repositorio, puede configurar Firebase Authentication y Firebase Store en el siguiente [link](https://firebase.google.com/docs/web/setup?authuser=0#config-object) o tambien puede solicitar la API KEY al siguiente mail: enzocolinecul1997@gmail.com
+
 ### Instalacion 🔧
 
 Puedes clonar mi proyecto con:
