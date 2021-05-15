@@ -48,13 +48,12 @@ const Routers = () => {
       <Toaster position="bottom-center" />
       <Transition
         show={!loading || checking}
-        as="div"
         enter="transition ease-out duration-500 "
         enterFrom=" opacity-0 scale-95"
         enterTo="opacity-100 scale-100 "
       >
         <Router>
-          <div >
+          <div  >
             <Switch>
               {!isLogged &&
                 <Route

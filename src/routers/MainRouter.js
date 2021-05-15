@@ -12,7 +12,7 @@ const MainRouter = () => {
   return (
     <>
       <NavBar />
-      <div >
+      < >
         <Switch>
           <Route exact path='/home' component={HomeScreen} />
           <Route exact path='/favorites' component={FavoritesScreen} />
@@ -20,7 +20,7 @@ const MainRouter = () => {
           <Route exact path='/character/:id' component={CharacterScreen} />
           <Redirect to='/home' />
         </Switch>
-      </div>
+      </>
     </>
   )
 }

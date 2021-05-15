@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+import React, { createRef, useState } from 'react'
 import { NavLink } from 'react-router-dom'
-import { Disclosure } from '@headlessui/react'
+import { Disclosure, Popover } from '@headlessui/react'
 import { useDispatch, useSelector } from 'react-redux'
 import { startLogout } from '../../actions/auth'
 import {
@@ -10,6 +10,7 @@ import {
   XIcon,
   MenuIcon
 } from '@heroicons/react/solid'
+import { createPopper } from "@popperjs/core";
 import SearchButton from './SearchButton'
 import MenuPanel from './MenuPanel'
 import logo from '../../assets/images/rick-and-morty-app.png'
@@ -22,6 +23,21 @@ const NavBar = () => {
   const { logged } = useSelector(state => state.auth)
 
   const [isShowing, setIsShowing] = useState(false)
+  const [popoverShow, setPopoverShow] = useState(false)
+  const btnRef = createRef()
+  const popoverRef = createRef()
+
+  const openPopover = () => {
+    createPopper(btnRef.current, popoverRef.current, {
+      placement: "bottom"
+    })
+    setPopoverShow(true)
+  }
+
+  const closePopover = () => {
+    setPopoverShow(false)
+  }
+
 
   const navigation = [
     { name: 'Home', link: "/home", current: false, isLogged: null, icon: <HomeIcon className="flex sm:hidden lg:flex h-5 w-6" /> },
@@ -51,8 +67,6 @@ const NavBar = () => {
                   aria-controls="mobile-menu"
                   aria-expanded="false"
                 >
-                  <span className="sr-only">Open main menu</span>
-
                   {open ? (
                     <XIcon onClick={setIsShowing(true)} className="block h-6 w-6" />
 
@@ -75,23 +89,43 @@ const NavBar = () => {
                     {navigation.map((item) => (
                       <div>
                         {item.isLogged === false ?
-                          <>
-                            <NavLink
+                          <div className="w-full text-center">
+                            <button
                               key={item.name}
-                              to={item.link}
+                              onClick={() => {
+                                popoverShow ? closePopover() : openPopover()
+                              }}
+                              ref={btnRef}
                               className={classNames(
-                                item.current ? 'bg-gray-900 text-white flex flex-col place-content-center items-center disabled:opacity-50 ' : 'text-gray-600 flex flex-col place-content-center items-center disabled:opacity-50',
+                                item.current ? 'bg-gray-900 text-white flex flex-col place-content-center items-center disabled:opacity-50 ' : 'text-gray-600 focus:outline-none flex flex-col place-content-center items-center disabled:opacity-50',
                                 'px-2  rounded-md text-sm font-medium'
                               )}
                               aria-current={item.current ? 'page' : undefined}
                             >
-                              <div className="flex flex-row pt-4" >
+                              <div className="flex flex-row" >
                                 {item.icon}
                                 {item.name}
                               </div>
-                            </NavLink>
-                            <p className="text-xs font-light flex text-gray-600 place-content-center"> Need authentication</p>
-                          </>
+                            </button>
+                            <div
+                              className={
+                                (popoverShow ? "" : "hidden ") +
+                                "bg-gray-600 border-0 mt-3 block z-50 font-normal leading-normal text-sm max-w-xs text-left no-underline break-words rounded-lg"
+                              }
+                              ref={popoverRef}
+                            >
+                              <div>
+                                <div
+                                  className="bg-gray-600 text-white opacity-75 font-semibold p-3 mb-0 border-b border-solid border-blueGray-100 uppercase rounded-t-lg"
+                                >
+                                  Need authentication
+                                </div>
+                                <div className="text-white p-3">
+                                  Click on the "Login" button to authenticate and access favorites
+                              </div>
+                              </div>
+                            </div>
+                          </div>
                           : <NavLink
                             onClick={() => item.current = true}
                             key={item.name}
@@ -126,14 +160,17 @@ const NavBar = () => {
               </div>
             </div>
           </div>
-          <SearchButton />
-          <MenuPanel
-            classNames={classNames}
-            navigation={navigation}
-            isShowing={isShowing}
-            logged={logged}
-            handleLogout={handleLogout}
-          />
+          {isShowing ?
+            <MenuPanel
+              classNames={classNames}
+              navigation={navigation}
+              isShowing={isShowing}
+              logged={logged}
+              handleLogout={handleLogout}
+            />
+            :
+            <SearchButton setIsShowing={setIsShowing} />
+          }
         </>
       )}
     </Disclosure>
