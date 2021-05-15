@@ -1,7 +1,7 @@
 
 # Rick and Morty App
 
-Es un proyecto que nacio con la idea de poner a prueba mis conocimientos en JavaScript, React, Redux, Firebase, Tailwind y Git. A su vez tambien vi la oportunidad para practicar e implementar metodologias agiles, en este caso utilice la estrategia Kanban
+Es un proyecto que nacio con la idea de poner a prueba mis conocimientos en JavaScript, React, Redux, Firebase, Tailwind y Git. A su vez tambien vi la oportunidad para practicar y aplicar metodologias agiles, en este caso utilice la estrategia Kanban
 
 ## Comenzando 🚀
 

@@ -1,6 +1,6 @@
 import React, { createRef, useState } from 'react'
 import { NavLink } from 'react-router-dom'
-import { Disclosure, Popover } from '@headlessui/react'
+import { Disclosure } from '@headlessui/react'
 import { useDispatch, useSelector } from 'react-redux'
 import { startLogout } from '../../actions/auth'
 import {
