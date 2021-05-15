@@ -1,5 +1,5 @@
 {
-  "homepage":"https://enzocolinecul.github.io/rick-and-morty-app",
+  "homepage": "https://enzocolinecul.github.io/rick-and-morty-app",
   "name": "rick-and-morty-app",
   "version": "0.1.0",
   "private": true,
@@ -7,7 +7,7 @@
     "@craco/craco": "^6.1.1",
     "@headlessui/react": "^1.0.0",
     "@heroicons/react": "^1.0.1",
-    "@popperjs/core": "2.9.1",
+    "@popperjs/core": "^2.9.1",
     "@testing-library/jest-dom": "^5.12.0",
     "@testing-library/react": "^11.2.6",
     "@testing-library/user-event": "^12.8.3",
