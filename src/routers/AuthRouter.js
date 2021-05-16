@@ -20,16 +20,16 @@ const AuthRouter = ({ ...rest }) => {
         <div className="auth-box-container">
           <Switch>
             <Route
-              exact path="/auth/login"
+              exact path="/rick-and-morty-app/auth/login"
               {...rest}
               component={LoginScreen}
             />
             <Route
-              exact path="/auth/register"
+              exact path="/rick-and-morty-app/auth/register"
               {...rest}
               component={RegisterScreen}
             />
-            <Redirect to="/auth/login" />
+            <Redirect to="/rick-and-morty-app/auth/login" />
           </Switch>
         </div>
       </div>

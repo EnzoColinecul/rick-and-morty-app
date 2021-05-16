@@ -14,11 +14,11 @@ const MainRouter = () => {
       <NavBar />
       < >
         <Switch>
-          <Route exact path='/home' component={HomeScreen} />
-          <Route exact path='/favorites' component={FavoritesScreen} />
-          <Route exact path='/searches' component={SearchScreen} />
-          <Route exact path='/character/:id' component={CharacterScreen} />
-          <Redirect to='/home' />
+          <Route exact path='/rick-and-morty-app/home' component={HomeScreen} />
+          <Route exact path='/rick-and-morty-app/favorites' component={FavoritesScreen} />
+          <Route exact path='/rick-and-morty-app/searches' component={SearchScreen} />
+          <Route exact path='/rick-and-morty-app/character/:id' component={CharacterScreen} />
+          <Redirect to='/rick-and-morty-app/home' />
         </Switch>
       </>
     </>
