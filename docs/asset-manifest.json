@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/static/css/main.3d1919b9.chunk.css",
+    "main.js": "/static/js/main.982fa7c7.chunk.js",
+    "main.js.map": "/static/js/main.982fa7c7.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.41a8c5ad.js",
+    "runtime-main.js.map": "/static/js/runtime-main.41a8c5ad.js.map",
+    "static/css/2.00e1a78a.chunk.css": "/static/css/2.00e1a78a.chunk.css",
+    "static/js/2.b8f488ad.chunk.js": "/static/js/2.b8f488ad.chunk.js",
+    "static/js/2.b8f488ad.chunk.js.map": "/static/js/2.b8f488ad.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/2.00e1a78a.chunk.css.map": "/static/css/2.00e1a78a.chunk.css.map",
+    "static/css/main.3d1919b9.chunk.css.map": "/static/css/main.3d1919b9.chunk.css.map",
+    "static/js/2.b8f488ad.chunk.js.LICENSE.txt": "/static/js/2.b8f488ad.chunk.js.LICENSE.txt",
+    "static/media/RickAndMortyLoadingImage1.5f3e56c3.png": "/static/media/RickAndMortyLoadingImage1.5f3e56c3.png",
+    "static/media/RickAndMortyLoadingImage2.f9f49119.png": "/static/media/RickAndMortyLoadingImage2.f9f49119.png",
+    "static/media/defaultImageCard.049210b4.jpeg": "/static/media/defaultImageCard.049210b4.jpeg",
+    "static/media/index.css": "/static/media/rick-and-morty.74c27467.png",
+    "static/media/rick-and-morty-app.84820ac9.png": "/static/media/rick-and-morty-app.84820ac9.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.41a8c5ad.js",
+    "static/css/2.00e1a78a.chunk.css",
+    "static/js/2.b8f488ad.chunk.js",
+    "static/css/main.3d1919b9.chunk.css",
+    "static/js/main.982fa7c7.chunk.js"
+  ]
+}

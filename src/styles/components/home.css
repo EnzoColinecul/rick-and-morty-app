@@ -79,13 +79,13 @@
 }
 
 .pagination-page {
+  cursor: pointer;
   @apply ml-1 
   px-2 
   transition duration-300 ease-in 
   rounded-full
   hover:text-gray-900 
   hover:bg-gray-200;
-  cursor: pointer;
 }
 
 .pagination-break{
@@ -93,14 +93,15 @@
 }
 
 .pagination-active-btn {
+  cursor: pointer;
   @apply transition duration-300 ease-in 
   text-gray-900 
   bg-gray-300;
 
-  cursor: pointer;
 }
 
 .pagination-navigation-btn {
+  cursor: pointer;
   @apply transition duration-300 ease-in 
   flex 
   items-center 
@@ -109,5 +110,4 @@
   border-r 
   border-gray-300 
   hover:text-gray-900;
-  cursor: pointer;
 }
