@@ -39,7 +39,8 @@ const Pagination = ({ setLoadingCards }) => {
         nextLabel={'Next'}
         nextClassName="pagination-navigation-btn"
         breakLabel={'...'}
-        pageClassName="pagination-page"
+        breakClassName="pagination-break"
+        pageClassName="pagination-page "
         activeClassName="pagination-active-btn"
         containerClassName="flex flex-row self-center my-2 " 
         pageCount={data?.info.pages}
