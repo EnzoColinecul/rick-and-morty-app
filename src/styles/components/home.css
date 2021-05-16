@@ -61,8 +61,6 @@
   md:text-base;
 }
 
-
-
 .pagination-container {
   @apply flex 
   flex-row  
