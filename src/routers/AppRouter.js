@@ -57,12 +57,12 @@ const Routers = () => {
             <Switch>
               {!isLogged &&
                 <Route
-                  path="/rick-and-morty-app/auth"
+                  path="/auth"
                   component={AuthRouter}
                 />
               }
               <PublicRoute
-                path="/rick-and-morty-app/"
+                path="/"
                 component={MainRouter}
               />
             </Switch>
