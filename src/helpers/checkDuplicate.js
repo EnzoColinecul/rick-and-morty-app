@@ -1,5 +1,3 @@
-
-
 export const checkDuplicate = (favorites, active) => {
   if (favorites.ids?.lenght !==0) {
     let checker = favorites.ids?.find(favorite => (
